@@ -14,10 +14,10 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $employees = Employee::orderBy('id', 'DESC')->get();
+        $employees = Employee::orderBy('id', 'DESC')->paginate(10);
 
         if (request('search')) {
-            $employees = Employee::where('last_name', 'like', '%'.request('search').'%')->orWhere('first_name','like','%'.request('search').'%')->get();
+            $employees = Employee::where('last_name', 'like', '%'.request('search').'%')->orWhere('first_name','like','%'.request('search').'%')->paginate(10);
         }
         return view('employees_list')->with('employees', $employees);
     }

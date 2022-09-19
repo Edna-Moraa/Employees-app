@@ -61,6 +61,9 @@
             
 
         </div>
+        <div class="card-footer">
+            {{ $employees->links('vendor.pagination.bootstrap-5') }}
+        </div>
     </div>
 </div>
 @endsection
