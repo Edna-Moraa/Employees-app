@@ -24,7 +24,7 @@ class EmployeeSeeder extends Seeder
             $employee->first_name =$faker->firstName();
             $employee->last_name =$faker->lastName();
             $employee->birth_date =$faker->date('Y-m-d', '2002-01-01');
-            $employee->email =Str::slug($employee->name);
+            $employee->email =$faker->email();
             $employee->phone_number =$faker->phoneNumber();
             $employee->gender = $i%3==0?'male':'female';
             $employee->title =$faker->jobTitle();
